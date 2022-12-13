@@ -1,0 +1,58 @@
+# Application API
+
+## `POST /api/login`
+
+### Payload
+
+(_x-form-www-urlencoded or JSON_)
+
+| Key      | Type   | Required |
+| -------- | ------ | -------- |
+| username | string | true     |
+| password | string | true     |
+
+### Example Request
+
+```bash
+curl -X POST \
+  http://localhost:8080/api/login \
+  -H 'Content-Type: application/x-www-form-urlencoded' \
+  -d 'username=admin&password=admin'
+```
+
+### Example Response
+
+A `token` cookie is sent as well as the JSON object:
+
+```json
+{
+  "token": "[application token]"
+}
+```
+
+## `GET /api/user`
+
+### Payload
+
+Either attach the header `Authorization: Bearer [token]`, or send a token (as `token=xxx`) through your cookies
+
+### Example Request using Authorization Header
+
+```bash
+curl http://localhost:8080/api/user -H "Authorization: Bearer [token]"
+```
+
+### Example Request using Cookie
+
+```bash
+curl http://localhost:8080/api/user -b "token=[token value]"
+```
+
+### Example Response
+
+```json
+{
+  "username": "user-01",
+  "data": "ff01-ffa4-edec-da31"
+}
+```
