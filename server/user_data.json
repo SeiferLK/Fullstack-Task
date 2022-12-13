@@ -1,0 +1,19 @@
+{
+    "users": [
+        {
+            "username": "user_a",
+            "password": "pwa2020",
+            "data": "f43b7e58-9943-4b5d-b6f1-f0f8e77389b0"
+        },
+        {
+            "username": "user_b",
+            "password": "pwb2020",
+            "data": "55946ec2-74ce-41ac-8b4a-a9bb09f99e4b"
+        },
+        {
+            "username": "user_c",
+            "password": "pwc2020",
+            "data": null
+        }
+    ]
+}
